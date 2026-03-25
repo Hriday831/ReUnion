@@ -1,13 +1,23 @@
 const friends = [
     {
         name : "Hriday Kundu",
-        image : "hriday.jpeg",
+        image : "hriday kundu.jpeg",
         batch : "2022",
         dob: "07/01",
         facebook : "https://www.facebook.com/hridoy.kundu.127",
         instagram : "https://www.instagram.com/hriday_kundu5?igsh=OTRpMWRxZXFsb2Q0",
         thread : "#",
-        email : "#"
+        linkedin : "https://www.linkedin.com/in/hriday-kundu-5646b2379/"
+    },
+    {
+        name : "Anima Barai",
+        image : "anima barai.jpeg",
+        batch : "2022",
+        dob: "18/04",
+        facebook : "https://www.facebook.com/profile.php?id=61550797195140",
+        instagram : "#",
+        thread : "#",
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -17,7 +27,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -27,7 +37,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -37,17 +47,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
-    },
-    {
-        name : "demo name",
-        image : "demo.jpg",
-        batch : "2022",
-        dob: "01/01",
-        facebook : "#",
-        instagram : "#",
-        thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -57,7 +57,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -67,7 +67,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -77,7 +77,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -87,7 +87,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     },
     {
         name : "demo name",
@@ -97,7 +97,7 @@ const friends = [
         facebook : "#",
         instagram : "#",
         thread : "#",
-        email : "#"
+        linkedin : "#"
     }
 ];
 
@@ -139,7 +139,7 @@ function createCard(person) {
                     <a href="${person.facebook}" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
                     <a href="${person.instagram}" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
                     <a href="${person.thread}" target="_blank" aria-label="Threads"><i class="uil uil-at"></i></a>
-                    <a href="mailto:${person.email}" target="_blank" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                    <a href="${person.linkedin}" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
                 </div>
             </article>`;
 }
@@ -490,29 +490,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let model;
     const loader = new THREE.GLTFLoader();
 
-    /* 3D Model Loader - Commented out to prevent 404 Error (Missing student.glb)
-    // Ensure you have a 'student.glb' file in your Assets folder
-    loader.load('./Assets/student.glb', function (gltf) {
-        model = gltf.scene;
-        model.scale.set(2, 2, 2); // Adjust scale based on your model size
-        model.position.y = -2;    // Adjust position to center it
-        scene.add(model);
-
-        // GSAP Scroll Animation (Only after model is loaded)
-        gsap.to(model.rotation, {
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1
-            },
-            y: Math.PI * 2, // Rotate 360 degrees
-            ease: "none"
-        });
-    }, undefined, function (error) {
-        console.error('An error occurred loading the model:', error);
-    });
-    */
 
     camera.position.z = 5;
     gsap.registerPlugin(ScrollTrigger);
