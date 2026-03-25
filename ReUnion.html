@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>REUNION-SMPMMV</title>
+
+    <!-- ========== cdn link for icons ================= -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+
+    <!-- ========== cdn link for google fonts ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- ========== link with css ================= -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <div class="h-logo">
+            <img src="https://img.freepik.com/free-vector/back-school-illustration_1308-173498.jpg?semt=ais_user_personalization&w=740&q=80" class="logo" alt="Class Logo">
+            <h2 class="title" class="animation">Friendship Zone</h2>
+        </div> 
+
+        <div class="menu-container">
+            <button id="menu-btn" aria-label="Toggle Navigation Menu">
+                <i class="uil uil-bars"></i> </button>
+            <nav id="menu-nav">
+                 <ul class="nav__links">
+                    <!--==========here you can add more section========= -->     
+                    <!----- Links created dynamically using javascript ------->
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <div class="search-container search-btn-tablet">
+        <button id="search-icon" aria-label="Search">
+            <i class="uil uil-search"></i>
+        </button>
+        <input type="text" id="search-input" placeholder="Search by Name">
+    </div>
+
+    <!----birthday wish container ----->
+    <div id="btwcardContainer" class="btw-card-container">  
+        <div class="btw-birthday-card">
+            
+            <button class="btw-close-button" id="btw-close-button">
+                <i class="uil uil-times"></i>
+            </button>
+
+            <div class="btw-lottie-container">
+                <dotlottie-wc   src="https://lottie.host/305ad90a-8df0-4dd2-a774-71a7e3984856/UsEiZZ1zO4.lottie" style="width: 250px;height: 250px" autoplay loop></dotlottie-wc>
+            </div>
+            
+            <h1 class="btw-person-name">
+                Happy Birthday<br><span class="animation" id="btw-person-name"></span>
+            </h1>
+
+            <p class="btw-wish-text" id="birthday-wish">
+                <!---- birthday wish show using js ----->
+            </p>
+        </div>
+    </div>
+    <!---- end birthday wish container ----->
+
+    <!---- Birthday Countdown Modal ----->
+    <div id="countdown-modal" class="btw-card-container" style="display: none;">
+        <div class="btw-birthday-card">
+            <button class="btw-close-button" id="countdown-close-btn">
+                <i class="uil uil-times"></i>
+            </button>
+            <h2>Upcoming Birthdays 🎂</h2>
+            <div id="countdown-content"></div>
+        </div>
+    </div>
+    <!---- End Birthday Countdown Modal ----->
+
+    <section class="team" id="all-students">
+        <!----- Batches and cards created dynamically using javascript ------->
+    </section>
+   
+    <!---- Gallery Section ---->
+    <section class="gallery" id="gallery">
+        <div class="sec-txt">
+            <h2>Gallery</h2>
+        </div>
+        <div class="container gallery-container" id="gallery-container"></div>
+    </section>
+
+    <footer>
+        <div>
+            <p>@ Developed by <a href="https://www.instagram.com/hriday_kundu5?igsh=OTRpMWRxZXFsb2Q0"  target="_blank">Hriday Kundu</a></p>
+        </div>       
+    </footer>
+
+    <!-- Three.js and GSAP for 3D Scrolling Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="ReUnion.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
