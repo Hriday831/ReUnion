@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>REUNION-SMPMMV</title>
+
+    <!----link for google font---->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- ========== cdn link for icons ================= -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+
+    <!----link for animations---->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
+    
+    <style>
+        :root {
+            --dark-navy: #060e2e;
+            --primary-teal: #06B6D4;
+            --base-violet: white; 
+            --highlight-red: #dfa801; 
+            --light-gray: #000000;
+            --muted-slate: #c2c6cc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-navy); 
+            color: var(--light-gray); 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .content-container {
+            max-width: 48rem;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .fly-ani {
+            width: 22rem;
+            height: 22rem;
+            margin-top: -5rem;
+        }
+
+        .main-heading {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 0.03em; 
+            color: var(--base-violet); 
+            white-space: nowrap;
+            margin-top: -2rem; 
+            text-align: center;
+            align-self: center;
+        }
+        
+        .main-heading span {
+            display: inline-block;
+            transition: color 0.1s linear, transform 0.25s ease-out; 
+            color: inherit; 
+        }
+        
+        .main-heading .red-scan {
+            color: var(--highlight-red); 
+            transform: rotatez(360deg) scale(1.1);
+        }
+
+        .subtitle {
+            margin-top: -3rem; 
+            font-size: 1.25rem;
+            color: var(--muted-slate); 
+            font-weight: 500;
+        }
+
+        .cta-wrapper {
+            padding-top: 2rem;
+            display: flex; 
+            justify-content: center; 
+            gap: 1.5rem; 
+        }
+
+        .cta-button {
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            color: var(--dark-navy); 
+            background-color: var(--primary-teal); 
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: rgb(140, 4, 124); 
+            transform: translateY(-4px);
+            color: white;
+            border: 1.5px solid rgb(255, 255, 255);
+            box-shadow: 0 0 40px rgba(5, 130, 255, 0.8);
+        }
+
+        .loading-container {
+            text-align: center;
+            color: white;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--dark-navy);
+            z-index: 9999;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .loading-animation {
+            width: 50rem;
+            padding: 0rem 1rem;
+        }
+
+        .loading-disclaimer {
+            margin-top: 1rem;
+            color: var(--muted-slate);
+            font-size: 1rem;
+            max-width: 80%;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ==================== MEDIA QUERIES (PHONE) ==================== */
+        @media screen and (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+
+            .content-container {
+                padding-top: 5rem;
+                padding-bottom: 3rem;
+            }
+
+            .fly-ani {
+                margin-top: 0;
+                width: 18rem;
+                height: 18rem;
+            }
+
+            .main-heading {
+                font-size: 2.2rem; 
+                margin-top: 0.5rem;
+                white-space: normal;
+                line-height: 1.2; 
+            }
+
+            .subtitle {
+                margin-top: 1rem; 
+                font-size: 1rem;
+                line-height: 1.6;
+                width: 90%;
+            }
+
+            .cta-button {
+                margin-top: 2rem;
+                width: 80%;
+                padding: 1rem;
+            }
+
+            .loading-animation {
+                width: 100%;
+            }
+
+            .load-txt {
+                font-size: 1.5rem;
+            }
+
+            .floating-item {
+                display: none;
+            }
+        }
+        
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Floating Stickers/Emojis */
+        .floating-item {
+            position: absolute;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+            pointer-events: none;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        }
+        
+        .floating-item i {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Decorative Stickers/Emojis -->
+    <div class="floating-item" style="top: 15%; left: 10%; font-size: 4rem; animation-delay: 0s;">🪐</div>
+    <div class="floating-item" style="top: 25%; right: 15%; font-size: 3rem; animation-delay: 2s;">🚀</div>
+    <div class="floating-item" style="bottom: 15%; left: 15%; font-size: 3.5rem; animation-delay: 1s;">🎓</div>
+    <div class="floating-item" style="bottom: 25%; right: 10%; font-size: 3rem; animation-delay: 3s;">🛸</div>
+    <div class="floating-item" style="top: 45%; left: 5%; font-size: 2rem; opacity: 0.5; animation-delay: 4s;">✨</div>
+    <div class="floating-item" style="top: 60%; right: 5%; font-size: 2.5rem; animation-delay: 1.5s;">🎉</div>
+
+    <div class="content-container">
+        <div class="header-section">   
+            <dotlottie-wc src="https://lottie.host/6ef3ca02-8151-44fb-a53e-d92bb9ec8181/alN8PMqttd.lottie" class="fly-ani" autoplay loop></dotlottie-wc>
+            <h1 class="main-heading">  FRIENDSHIP ZONE  </h1>
+            <p class="subtitle">
+                Suryanagar Master Preet Nath Memorial Madhyamik Vidyalaya. <br>Forever ❤️ Friendship
+            </p>
+        </div>
+
+        <div class="lottie-container">
+            <lottie-player
+                id="college-animation"
+                src="https://lottie.host/5a2d677a-a53f-42e7-91f8-9577742188fa/u9W84w94m4.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+            ></lottie-player>
+        </div>
+
+        <div class="cta-wrapper">
+            <button class="cta-button" id="explore-btn">
+                Explore
+            </button>
+        </div>
+    </div>
+
+    <div class="loading-container">
+        <dotlottie-wc  src="https://lottie.host/325c38b9-808d-47b3-b323-ac0ef0d441e9/cd7DYS4WiZ.lottie" class="loading-animation"  autoplay  loop></dotlottie-wc>
+        <h1 class="main-heading load-txt">Loading...</h1>
+        <p class="loading-disclaimer">Are you ready for Re-union</p>
+    </div>
+
+    <script>
+        function wrapLetters(element) {
+            const text = element.textContent;
+            element.innerHTML = text
+                .split('')
+                .map(char => {
+                    return `<span>${char === ' ' ? '&nbsp;' : char}</span>`;
+                })
+                .join('');
+            return element.querySelectorAll('span');
+        }
+
+        function startScanAnimation(letters) {
+            if (letters.length === 0) return;
+
+            let currentIndex = 0;
+            let isBuildingUp = true; 
+            const scanInterval = 200; 
+
+            function animate() {
+                if (isBuildingUp) {
+                    if (currentIndex < letters.length) {
+                        letters[currentIndex].classList.add('red-scan');
+                        currentIndex++;
+                    } else {
+                        isBuildingUp = false;
+                        currentIndex = 0; 
+                    }
+                } else {
+                    if (currentIndex < letters.length) {
+                        letters[currentIndex].classList.remove('red-scan');
+                        currentIndex++;
+                    } else {
+                        isBuildingUp = true;
+                        currentIndex = 0; 
+                    }
+                }
+            }
+
+            setInterval(animate, scanInterval);
+        }
+
+        
+        setTimeout(() => {
+            const heading = document.querySelector('.main-heading');
+            const letters = wrapLetters(heading);
+            startScanAnimation(letters);
+        }, 300);
+
+        const exploreButton = document.getElementById('explore-btn');
+        const contentContainer = document.querySelector('.content-container');
+        const loadingContainer = document.querySelector('.loading-container');
+
+        function generateRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const MIN_VALUE = 1500;
+        const MAX_VALUE = 2500;
+        const loading_time = generateRandomInt(MIN_VALUE, MAX_VALUE);
+
+        exploreButton.addEventListener('click', function() {
+            contentContainer.style.display = 'none';
+            loadingContainer.style.display = 'flex';
+
+            setTimeout(function() {
+                window.location.href = 'classmate - Copy.html';
+            }, loading_time); 
+        });
+
+        /* --- Particle Background Animation --- */
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let particlesArray;
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                // Bounce off edges
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            let divisor = (window.innerWidth < 600) ? 15000 : 9000;
+            let numberOfParticles = (canvas.height * canvas.width) / divisor;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 0.5;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 1) - 0.5;
+                let directionY = (Math.random() * 1) - 0.5;
+                let color = 'rgba(255, 255, 255, 0.6)';
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function connectParticles() {
+            let maxDistance = 120;
+            let maxDistanceSq = maxDistance * maxDistance;
+            
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    // Distance formula (squared for performance)
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + 
+                                   ((particlesArray[a].y - particlesArray[b].y) ** 2);
+                    
+                    if (distance < maxDistanceSq) {
+                        let opacityValue = 1 - (distance/maxDistanceSq);
+                        ctx.strokeStyle = 'rgba(255, 255, 255,' + opacityValue * 0.15 + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connectParticles();
+        }
+
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', function(){
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            initParticles();
+        });
+    </script>
+    
+</body> 
+
+</html>   
