@@ -40,12 +40,12 @@ const friends = [
         linkedin : "#"
     },
     {
-        name : "demo name",
-        image : "demo.jpg",
+        name : "Subha Barman ",
+        image : "Subha Barman.jpg",
         batch : "2022",
-        dob: "01/01",
-        facebook : "#",
-        instagram : "#",
+        dob: "25/11",
+        facebook : "https://www.facebook.com/share/1CHVes3A36/",
+        instagram : "https://www.instagram.com/toxic_itachi__?igsh=MXJiOTU5bzljM2FzMg==",
         thread : "#",
         linkedin : "#"
     },
