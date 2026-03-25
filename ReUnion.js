@@ -20,22 +20,22 @@ const friends = [
         linkedin : "#"
     },
     {
-        name : "demo name",
-        image : "demo.jpg",
+        name : "Annapurna Sarkar",
+        image : "annapurna Sarkar.jpg",
         batch : "2022",
-        dob: "01/01",
-        facebook : "#",
-        instagram : "#",
+        dob: "12/02",
+        facebook : "https://www.facebook.com/profile.php?id=61558218665816",
+        instagram : "https://www.instagram.com/its____cutegirl____anu1902?igsh=OXhwbzhtcXVxcGFi",
         thread : "#",
         linkedin : "#"
     },
     {
-        name : "demo name",
-        image : "demo.jpg",
-        batch : "2022",
-        dob: "01/01",
-        facebook : "#",
-        instagram : "#",
+        name : "Purnima Biswas ",
+        image : "Purnima Biswas.jpg",
+        batch : "2021",
+        dob: "17/10",
+        facebook : "https://www.facebook.com/share/1NeAudtnCt/",
+        instagram : "https://www.instagram.com/_she_observes?igsh=MTVoZmlxcnd1ZHRmMw==",
         thread : "#",
         linkedin : "#"
     },
