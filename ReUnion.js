@@ -130,7 +130,7 @@ const randomWish = wishes[randomIndex];
 function createCard(person) { 
     return `<article class="team__member">
                 <div class="team__member__image">
-                    <img src="./Assets/${person.image}" alt="${person.name}">
+                    <img src="./asset/${person.image}" alt="${person.name}">
                 </div>
                 <div class="team__member__info">
                     <h4>${person.name}</h4>
