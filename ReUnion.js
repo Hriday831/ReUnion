@@ -103,12 +103,12 @@ const friends = [
 
 // Gallery Images Data
 const galleryImages = [
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1932&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=2068&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop"
+    "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerMyrknZsDN-2ZC0L-ItwS1bX3DDkwXSUu0ZeXMdrEKWZQutJbDIqyy7lbagtAYkUUWT9VUJKcCx6P0vG-g3Vf6NVTDQ_cC5RXxBAh7_xRY3uakk7MdirDR9yiClAPT6MXSQOz6Gg=s1360-w1360-h1020-rw",
+    "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoSBFwLEbnLI4gWJ2bfIKHh35RpiF6G2DJtEo8oR_Wwtf4ne_iYoXIX5wbUeWuxqwwgr5zXeSfPQFbzkgroeSXdcDgEllMefhq1b9GDeFlC__STVJ-9lz4dtj0_YfY69XoZWOi-dQ=s1360-w1360-h1020-rw",
+    "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqLnIvtUlu3DhIr28pzShR4NappYYtzG9DirV41vcIxSuq1X5FVBaE3Z7NJstCjvJD3g3SwnJGCV9sflebbM19NsOcjnyGib2rEuWBM8xY0N5gOYeBeCz6f8xrU-GcaLbdhrgi1Ng=s1360-w1360-h1020-rw",
+    "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoQhjzSQoy05_cY2y_R0t4W_sCFhEvU1t6UUxAfmali6n1ZIO3hUOFQ9zlRUBqXVsIQzvYk1O9k3qi5S8U6XaDMasS72AhlXTkwr-dAYkuQJ6vuJVlEuFB1wyFI5RUJERdEvxd3iA=s1360-w1360-h1020-rw",
+    "https://content.jdmagicbox.com/comp/siliguri/m9/9999px353.x353.190402041029.i5m9/catalogue/suryanagar-master-preet-nath-memorial-madhyamik-vidyalaya-rabindra-sarani-siliguri-bengali-medium-schools-ftd8jj5bxd.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuyl-zUzzvADMu3931O1nbKQIC74vHRr9XSA&s"
 ];
 
 //store of wishes
