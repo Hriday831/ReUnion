@@ -50,12 +50,12 @@ const friends = [
         linkedin : "#"
     },
     {
-        name : "demo name",
-        image : "demo.jpg",
+        name : "Apurba Roy",
+        image : "Apurba Roy.jpg",
         batch : "2022",
-        dob: "01/05",
-        facebook : "#",
-        instagram : "#",
+        dob: "03/10",
+        facebook : "https://www.facebook.com/share/18aR648Rhg/",
+        instagram : "https://www.instagram.com/apur.ba552?igsh=YTJjcDdpbHN4dGUz",
         thread : "#",
         linkedin : "#"
     },
